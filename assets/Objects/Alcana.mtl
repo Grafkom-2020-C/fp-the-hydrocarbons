@@ -1,0 +1,11 @@
+newmtl Synthetic Rubber_d7eab245-ee40-4b60-9359-9d64c13e96da
+Kd 0.020 0.020 0.020
+d 1.000
+newmtl Raw Marble_f50fb0bf-3700-4548-9059-9ef874e5b145
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd texture_10.jpg
+newmtl Red to Orange_beb0c116-41c0-4511-943f-12c23b89593b
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd gradient37.jpg
