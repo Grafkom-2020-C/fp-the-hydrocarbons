@@ -60,11 +60,10 @@
             object.rotation.y = 100;
             //object.rotation.x = 250;
 
-            // this.tl = new TimelineMax();
-            // this.tl.from(ourObj2.scale, 2, {y: 0, x:0, z: 0, ease: Expo.easeOut})
-            // this.tl.from(ourObj2.position, 2, {y: 0, z: -30,  ease: Expo.easeOut})
-            // this.tl.from(ourObj.scale, 2, {x: 1.5, y: 1.5, z: 0, ease: Expo.easeOut}, '-=2')
-            // this.tl.from(ourObj.position, 1, {y: -20, ease: Expo.easeOut}, '-=3')
+            this.tl = new TimelineMax();
+            this.tl.from(ourObj.rotation, 2, {x: 0, y: 100, z: 0, ease: Expo.easeOut});
+            this.tl.from(ourObj.scale, 1, {x: -1.5, y: -1.5, z: -1.5, ease: Expo.easeOut}, '-=2');
+            this.tl.from(ourObj.position, 1, {y: -20, ease: Expo.easeOut},'-=3');
         });
     });
 
