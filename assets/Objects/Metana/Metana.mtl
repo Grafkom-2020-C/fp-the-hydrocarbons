@@ -1,0 +1,12 @@
+newmtl Scratched Metal_c0732b9d-e96e-4f35-b6a6-a51c6f629c14
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd texture_13.jpg
+newmtl Orange to Yellow_47f7d642-1b31-4684-a8d2-1b3e6b6a19cd
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd gradient47.jpg
+newmtl Raw Marble_6b816150-ef7c-4e91-98f1-fbba97162513
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd texture_10.jpg
