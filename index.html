@@ -42,6 +42,7 @@
 
     // Defining a variable for our model
     var ourObj;
+    var ourObj2;
 
     // Create a material
     var mtlLoader = new THREE.MTLLoader();
@@ -64,6 +65,21 @@
             this.tl.from(ourObj.rotation, 2, {x: 0, y: 100, z: 0, ease: Expo.easeOut});
             this.tl.from(ourObj.scale, 1, {x: -1.5, y: -1.5, z: -1.5, ease: Expo.easeOut}, '-=2');
             this.tl.from(ourObj.position, 1, {y: -20, ease: Expo.easeOut},'-=3');
+        });
+    });
+
+    // Create a material
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load('assets/Objects/Metana/Text.mtl', function (materials) {
+
+        materials.preload();
+
+        // Load the object
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load('assets/Objects/Metana/Text.obj', function (object) {
+            scene.add(object);
+            ourObj2 = object;
         });
     });
 
