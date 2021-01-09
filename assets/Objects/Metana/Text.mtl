@@ -1,3 +1,4 @@
-newmtl Blue Rounded Shapes_362af491-7dad-4065-b8bb-aa4eb3d22480
-Kd 0.588 0.788 1.000
+newmtl Blue to Blue_7b2e136e-88f0-4b68-892b-e23df9fcd6de
+Kd 1.000 1.000 1.000
 d 1.000
+map_Kd gradient42.jpg
