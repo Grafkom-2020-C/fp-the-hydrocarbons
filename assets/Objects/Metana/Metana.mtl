@@ -2,11 +2,31 @@ newmtl Scratched Metal_c0732b9d-e96e-4f35-b6a6-a51c6f629c14
 Kd 1.000 1.000 1.000
 d 1.000
 map_Kd texture_13.jpg
-newmtl Orange to Yellow_47f7d642-1b31-4684-a8d2-1b3e6b6a19cd
+newmtl Orange to Yellow 3_baeed465-cef4-44ce-a05e-68e7d9ca290c
 Kd 1.000 1.000 1.000
 d 1.000
 map_Kd gradient47.jpg
-newmtl Raw Marble_6b816150-ef7c-4e91-98f1-fbba97162513
+newmtl Orange to Yellow 4_c0e35acb-e7e5-41e7-9bfc-ceffcc0768a7
 Kd 1.000 1.000 1.000
 d 1.000
-map_Kd texture_10.jpg
+map_Kd gradient47.jpg
+newmtl Orange to Yellow 5_cab6ffba-ce37-4b54-a9b9-5be3dc478bc6
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd gradient47.jpg
+newmtl Orange to Yellow 6_0dc2b8cf-ebf6-494f-bd69-b67d93aa2d96
+Kd 1.000 1.000 1.000
+d 1.000
+map_Kd gradient47.jpg
+newmtl Dirty Plastic 1_1ba61482-4f52-4932-a7e9-3cb9fe8c92be
+Kd 0.659 0.114 0.114
+d 1.000
+newmtl Dirty Plastic 2_bfa25576-e64e-40be-909f-09e4c57b3dff
+Kd 0.659 0.114 0.114
+d 1.000
+newmtl Dirty Plastic 3_857aec5d-d3d7-4498-a430-afd70af4dc40
+Kd 0.659 0.114 0.114
+d 1.000
+newmtl Dirty Plastic 4_6ed09d21-e2df-4e5e-bf12-2144de220f5c
+Kd 0.659 0.114 0.114
+d 1.000
