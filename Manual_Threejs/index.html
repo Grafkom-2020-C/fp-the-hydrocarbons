@@ -57,6 +57,7 @@
     var sphereC = new THREE.SphereGeometry(5, 32, 32);
     var sphereH = new THREE.SphereGeometry(3, 32, 32);
     var cylinder = new THREE.CylinderGeometry(1, 1, 5, 32);
+    var cylinderC = new THREE.CylinderGeometry(1, 1, 15, 32);
 
     // Geom[0] = Tipe
     // Geom[1] = Posisi awal. Untuk C terhadap World, sisanya terhadap C
@@ -64,19 +65,27 @@
     // Geom[3] = Arah H dan silinder terhadap C (geom[0]);
     // Geom[4] = Warna;
 
-    geom.push([sphereC, new THREE.Vector3(10,0,0), 0, new THREE.Vector3(0,0,0), "orange"]);
+    geom.push([sphereC, new THREE.Vector3(0,0,0), 0, new THREE.Vector3(0,0,0), "orange"]);
+    geom.push([sphereC, new THREE.Vector3(15,0,0), 0, new THREE.Vector3(0,0,0), "orange"]);
+    geom.push([cylinderC, new THREE.Vector3(0,0,0), 15, new THREE.Vector3(15,0,0), "red"]);
     
-    geom.push([sphereH, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(-1,-1,-1), "gray"]);
-    geom.push([cylinder, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(-1,-1,-1), "red"]);
+    geom.push([sphereH, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1,-2,-1), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1,-2,-1), "red"]);
     
-    geom.push([sphereH, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(1,-1,-1), "gray"]);
-    geom.push([cylinder, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(1,-1,-1), "red"]);
+    geom.push([sphereH, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1,2,-1), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1,2,-1), "red"]);
     
-    geom.push([sphereH, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(-1, -1, 1), "gray"]);
-    geom.push([cylinder, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(-1, -1, 1), "red"]);
+    geom.push([sphereH, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1, 0, 1), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(0,0,0), 10, new THREE.Vector3(-1, 0, 1), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(0,-1,0), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(0,-1,0), "red"]);
     
-    geom.push([sphereH, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(1, -1, 1), "gray"]);
-    geom.push([cylinder, new THREE.Vector3(10,0,0), 10, new THREE.Vector3(1, -1, 1), "red"]);
+    geom.push([sphereH, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(0,3,2), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(0,3,2), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(5,1,-1), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(15,0,0), 10, new THREE.Vector3(5,1,-1), "red"]);
 
     var pivot = new THREE.Group();
     scene.add(pivot);
@@ -84,8 +93,8 @@
     for (let i = 0; i < geom.length; i++) {
         var element = geom[i];
         var obj = new THREE.Mesh(element[0], new THREE.MeshLambertMaterial({color: element[4]}));
-        //obj.quaternion.setFromUnitVectors(element[1].subVectors(element[3]));
-        if(element[0] == cylinder){
+        
+        if(element[0] == cylinder || element[0] == cylinderC){
             var rotationVector = element[3].normalize();
             var axis = new THREE.Vector3(0, 1, 0);
             obj.quaternion.setFromUnitVectors(axis, rotationVector.clone().normalize());
@@ -101,8 +110,8 @@
         requestAnimationFrame(render);
         //controls.update();
         // Rotate the objects indefinitely
-        pivot.rotation.z += 0.02;
-        pivot.rotation.y += 0.02;
+        //pivot.rotation.z += 0.02;
+        //pivot.rotation.y += 0.02;
         renderer.render(scene, camera);
     }
 
