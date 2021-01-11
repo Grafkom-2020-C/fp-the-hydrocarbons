@@ -105,17 +105,17 @@ function main() {
     bondMesh.rotation.z = 0.568;
     mesh.add(bondMesh);
     
-    //   function makeXYZGUI(gui, vector3, name,l,r) {
-      //     const folder = gui.addFolder(name);
-      //     folder.add(vector3, 'x', l, r,0.001);
-      //     folder.add(vector3, 'y', l, r,0.001);
-      //     folder.add(vector3, 'z', l, r,0.001);
-      //     folder.open();
-      // }
+      function makeXYZGUI(gui, vector3, name,l,r) {
+          const folder = gui.addFolder(name);
+          folder.add(vector3, 'x', l, r,0.001);
+          folder.add(vector3, 'y', l, r,0.001);
+          folder.add(vector3, 'z', l, r,0.001);
+          folder.open();
+      }
       
-      // const gui = new GUI({autoplace : false});
-      // makeXYZGUI(gui,bondMesh.position,'position',-5,5);
-      // makeXYZGUI(gui,bondMesh.rotation,'rotation',0, 2 * Math.PI);
+      const gui = new GUI({autoplace : false});
+      makeXYZGUI(gui,bondMesh.position,'position',-5,5);
+      makeXYZGUI(gui,bondMesh.rotation,'rotation',0, 2 * Math.PI);
       
       //buat ngatur posisi ikatannya bagian diatas ini di-uncomment, nanti muncul GUI buat ngatur-ngatur posisi sama rotasi dari mesh ikatannya
       //urutannya, bikin mesh buat bondnya -> bikin guinya -> atur-atur posisi sama rotasinya -> kalo udah bagus, ambil nilai yang ada di guinya
