@@ -47,14 +47,14 @@
 
     // Create a material
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.load('assets/Objects/Metana/Metana.mtl', function (materials) {
+    mtlLoader.load('assets/Objects/Etana/Etana.mtl', function (materials) {
 
         materials.preload();
 
         // Load the object
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.load('assets/Objects/Metana/Metana.obj', function (object) {
+        objLoader.load('assets/Objects/Etana/Etana.obj', function (object) {
             scene.add(object);
             ourObj = object;
             object.position.z -= 70;
@@ -71,14 +71,14 @@
 
     // Create a material
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.load('assets/Objects/Metana/Text.mtl', function (materials) {
+    mtlLoader.load('assets/Objects/Etana/Text.mtl', function (materials) {
 
         materials.preload();
 
         // Load the object
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.load('assets/Objects/Metana/Text.obj', function (object) {
+        objLoader.load('assets/Objects/Etana/Text.obj', function (object) {
             scene.add(object);
             ourObj2 = object;
         });
@@ -88,7 +88,7 @@
         requestAnimationFrame(render);
         
         // Rotate the objects indefinitely
-        // ourObj.rotation.z += .03;
+        ourObj.rotation.z += .03;
         ourObj.rotation.y += .001;
         
         renderer.render(scene, camera);
