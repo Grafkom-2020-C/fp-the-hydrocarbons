@@ -6,7 +6,7 @@ camera.position.z = 100;
 
 // Create a Full Screen WebGL Renderer
 var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-renderer.setClearColor("#DDDDDD");
+renderer.setClearColor("#61E7FF");
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
@@ -51,6 +51,32 @@ function makeMethane(x,y,z) {
     addObject(geom);
 }
 
+function makeEthane(x,y,z) {
+    let geom = [];
+    geom.push([sphereC, new THREE.Vector3(x, y, z), 0, new THREE.Vector3(0, 0, 0), "orange"]);
+    geom.push([sphereC, new THREE.Vector3(x + 15, y, z), 0, new THREE.Vector3(0, 0, 0), "orange"]);
+    geom.push([cylinderC, new THREE.Vector3(x, y, z), 15, new THREE.Vector3(15, 0, 0), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, -Math.cos(Math.PI / 6), -Math.cos(Math.PI / 6)), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, -Math.cos(Math.PI / 6), -Math.cos(Math.PI / 6)), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, -Math.cos(Math.PI / 6), Math.cos(Math.PI / 6)), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, -Math.cos(Math.PI / 6), Math.cos(Math.PI / 6)), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, 1, 0), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x, y, z), 10, new THREE.Vector3(-0.6, 1, 0), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, Math.cos(Math.PI / 6), Math.cos(Math.PI / 6)), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, Math.cos(Math.PI / 6), Math.cos(Math.PI / 6)), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, Math.cos(Math.PI / 6), -Math.cos(Math.PI / 6)), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, Math.cos(Math.PI / 6), -Math.cos(Math.PI / 6)), "red"]);
+
+    geom.push([sphereH, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, -1, 0), "gray"]);
+    geom.push([cylinder, new THREE.Vector3(x + 15, y, z), 10, new THREE.Vector3(0.6, -1, 0), "red"]);
+    addObject(geom);
+}
+
 function makePropane(x1,y,z) {
     var geom = [];
     let x2 = x1 + 12;
@@ -89,7 +115,9 @@ function makePropane(x1,y,z) {
 }
 
 makeMethane(-100,0,-5);
+makeEthane(75,50,-5);
 makePropane(-50,50,-5);
+makePropane(75,0,-5)
 
 function addObject(geom) {
     var pivot = new THREE.Group();
@@ -137,7 +165,7 @@ var render = function (time) {
         let speed = 1 + idx * .1;
         let rot = time * speed;
         piv.rotation.x = rot;
-        piv.rotation.z = rot;
+        piv.rotation.y = rot;
     });
     //controls.update();
     // Rotate the objects indefinitely
