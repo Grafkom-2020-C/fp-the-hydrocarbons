@@ -6,8 +6,8 @@
 
     // For get URL PATH
     $request = $_SERVER['REQUEST_URI'];
-    $nama = array("metana","etana","propana","butana");
-    $ix = rand(0,3);
+    $nama = array("metana","etana","propana","butana","pentana","heksana","heptana","oktana","nonana","dekana");
+    $ix = rand(0,9);
     $vis = '/fp-the-hydrocarbons/visualize';
     $hydro_name = "-";
     if (strpos($request,$vis) !== false and $request != $vis) {
@@ -28,7 +28,7 @@
             require "views/Visualize/metana.html";
             break;
         case $me.'/trivia' :
-            require "views/Trivia/nonana.html";
+            require "views/Trivia/".$nama[$ix].".html";
             break;
         case $me.'/contact' :
             require "views/contact.php";
