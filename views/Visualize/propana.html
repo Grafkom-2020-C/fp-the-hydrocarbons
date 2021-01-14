@@ -16,11 +16,58 @@
             left: 84%;
         }
     </style>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="/fp-the-hydrocarbons/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="/fp-the-hydrocarbons/home">
+                        Hydrocarbon Companions
+                    </a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/metana">Methane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/etana">Ethane</a>
+                </li>
+                <li class="active">
+                    <a href="/fp-the-hydrocarbons/visualize/propana">Propane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/butana">Butane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/pentana">Pentane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/heksana">Heksane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/heptana">Heptane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/oktana">Oktane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/nonana">Nonane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/dekana">Dekane</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.js"
         integrity="sha512-tmdOKTY7I6MOUcCL/9fa4s+BnBCgEuifJImOX46m36+rxVMcgHEPGLVoCXHR6ZvjcKGoVixEiBKE4LcYLnv0Cw=="
         crossorigin="anonymous"></script>
@@ -38,7 +85,7 @@
 
         // Create a Full Screen WebGL Renderer
         var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setClearColor("#DDDDDD");
+        renderer.setClearColor("#61E7FF");
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
