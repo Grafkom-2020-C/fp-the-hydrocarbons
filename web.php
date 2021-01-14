@@ -27,6 +27,9 @@
         case $me.'/visualize' :
             require "views/Visualize/metana.html";
             break;
+        case $me.'/trivia' :
+            require "views/Trivia/metana.html";
+            break;
         case $me.'/contact' :
             require "views/contact.php";
             break;
