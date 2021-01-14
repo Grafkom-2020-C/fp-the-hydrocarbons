@@ -37,7 +37,7 @@
             height: 100%;
             margin-left: -250px;
             overflow-y: auto;
-            background: #807b7b;
+            background: #DDDDDD;
             -webkit-transition: all 0.5s ease;
             -moz-transition: all 0.5s ease;
             -o-transition: all 0.5s ease;
@@ -98,13 +98,14 @@
             line-height: 60px;
         }
 
-        .sidebar-nav > .sidebar-brand a {
-            color: #999999;
+        .sidebar-nav > .active a {
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255,255,255,0.2);
         }
 
-        .sidebar-nav > .sidebar-brand a:hover {
-            color: #fff;
-            background: none;
+        .sidebar-nav > .sidebar-brand a {
+            color: black;
         }
 
         @media(min-width:768px) {
@@ -161,30 +162,39 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
+                    <a href="/fp-the-hydrocarbons/home">
+                        Hydrocarbon Companions
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="/fp-the-hydrocarbons/visualize/metana">Methane</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="/fp-the-hydrocarbons/visualize/etana">Ethane</a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <a href="/fp-the-hydrocarbons/visualize/propana">Propane</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="/fp-the-hydrocarbons/visualize/butana">Butane</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="/fp-the-hydrocarbons/visualize/pentana">Pentane</a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="/fp-the-hydrocarbons/visualize/heksana">Heksane</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="/fp-the-hydrocarbons/visualize/heptana">Heptane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/oktana">Oktane</a>
+                </li>
+                <li>
+                    <a href="/fp-the-hydrocarbons/visualize/nonana">Nonane</a>
+                </li>
+                <li class="active">
+                    <a href="#">Dekane</a>
                 </li>
             </ul>
         </div>
@@ -202,7 +212,7 @@
     
     // Create a Full Screen WebGL Renderer
     var renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-    renderer.setClearColor("#DDDDDD");
+    renderer.setClearColor("#61E7FF");
     renderer.setSize(window.innerWidth,window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
