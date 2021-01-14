@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script> -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Hello, world!</title>
+    <style>
+        body {
+            margin: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        #bg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            pointer-events: all;
+            border: none;
+        }
+    </style>
+  </head>
+  <body>
+        <iframe id="bg" src="/fp-the-hydrocarbons/views/Trivia/background/butana.html"></iframe>
+        <div class="container">
+            <a href="/fp-the-hydrocarbons/home" role="button" class="btn btn-light">
+                <i class="fa fa-home" aria-hidden="true">Home</i>
+            </a>
+        </div>
+         <div class="container" style="position: absolute; top: 15%; left: 5%;">
+            <h2 style="text-align: center;">What's the name of this hydrocarbon?</h2>
+        </div>
+        <div class="container" style="position: absolute; top: 85%; left: 5%;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-grid gap-2">
+                        <button id="option0" class="btn btn-primary" type="button" data-toggle="modal" data-target="#correctModal">Methane</button>
+                        <button id="option1" class="btn btn-success" type="button" data-toggle="modal" data-target="#incorrectModal">Ethane</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-grid gap-2">
+                        <button id="option2" class="btn btn-danger" type="button" data-toggle="modal" data-target="#incorrectModal">Butane</button>
+                        <button id="option3" class="btn btn-warning" type="button" data-toggle="modal" data-target="#incorrectModal">Propane</button>
+                    </div>
+                </div>
+                <div class="modal" id="correctModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header" style="background-color: green;">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i><h4 class="modal-title">Correct !</h4>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          The Correct Answer is Methane
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer" style="background-color: green;">
+                          <a role="button" class="btn btn-warning" href="/fp-the-hydrocarbons/home">Home</a>
+                          <a role="button" class="btn btn-primary" href="/fp-the-hydrocarbons/trivia">Next Question</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                </div>
+                <div class="modal" id="incorrectModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header" style="background-color: red;">
+                            <i class="fa fa-times" aria-hidden="true"></i><h4 class="modal-title">Incorrect !</h4>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                          The Correct Answer is Methane
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer" style="background-color: red;">
+                          <a role="button" class="btn btn-warning" href="/fp-the-hydrocarbons/home">Home</a>
+                          <a role="button" class="btn btn-primary" href="/fp-the-hydrocarbons/trivia">Next Question</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                </div>
+        </div> 
+        <script>
+            function shuffle(array) {
+                var currentIndex = array.length, temporaryValue, randomIndex;
+
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+
+                return array;
+            }
+            let nameList = ["Methane","Ethane","Propane","Butane","Pentane","Heksane","Heptane","Oktane","Nonane","Dekane"];
+            let currentName = "Butane";
+            let chosenName = [currentName];
+            let takenIndex;
+            let can;
+            for (let i = 1 ; i <= 3 ; i++) {
+                while (true) {
+                    takenIndex = Math.floor(Math.random() * 10);
+                    can = 1;
+                    for (let j = 0 ; j < chosenName.length ; j++) {
+                        if (chosenName[j] == nameList[takenIndex]) {
+                            can = 0;
+                            break;
+                        }
+                    }
+                    if (can == 1) {
+                        chosenName.push(nameList[takenIndex]);
+                        break;
+                    }
+                }
+            }
+            chosenName = shuffle(chosenName);
+            for (let i = 0 ; i < 4 ; i++) {
+                let id = "option";
+                id += i;
+                document.getElementById(id).innerHTML = chosenName[i];
+                if (chosenName[i] == currentName)
+                    document.getElementById(id).setAttribute("data-target","#correctModal");
+                else
+                    document.getElementById(id).setAttribute("data-target","#incorrectModal");
+            }
+        </script>
+  </body>
+</html>
