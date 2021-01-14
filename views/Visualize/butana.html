@@ -172,6 +172,9 @@
         pivot.add(obj);
     }
     
+    new THREE.Box3().setFromObject(pivot).getCenter(pivot.position).multiplyScalar(- 1);
+    scene.add(pivot);
+
     // Define Render Function
     var render = function() {
         requestAnimationFrame(render);
